@@ -36,6 +36,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Vector;
 
+import com.smartnews.dp.scylladb.alternator.AlternatorRequestHandler;
+import java.net.URI;
+
 /**
  * DynamoDB client for YCSB.
  */
@@ -138,7 +141,9 @@ public class DynamoDBClient extends DB {
           dynamoDBBuilder.withEndpointConfiguration(
               new AwsClientBuilder.EndpointConfiguration(this.endpoint, this.region)
           );
+      AlternatorRequestHandler handler = new AlternatorRequestHandler(new URI(endpoint));
       dynamoDB = dynamoDBBuilder
+          .withRequestHandlers(handler)
           .withClientConfiguration(
               new ClientConfiguration()
                   .withTcpKeepAlive(true)

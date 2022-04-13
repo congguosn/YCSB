@@ -20,11 +20,9 @@
 
 # AWS credentials associated with your aws account.
 #dynamodb.awsCredentialsFile = <path to AWSCredentials.properties>
-dynamodb.awsCredentialsFile = /data/YCSB_CONG/YCSB/dynamodb/conf/AWSCredentials.properties
 
 # Primarykey of table 'usertable'
 #dynamodb.primaryKey = <firstname>
-dynamodb.primaryKey = key
 
 # If you set dynamodb.primaryKeyType to HASH_AND_RANGE, you must specify the
 # hash key name of your primary key here. (see documentation below for details)
@@ -80,7 +78,6 @@ dynamodb.primaryKey = key
 # endpoint (such as a proxy), the region parameter is still required to generate
 # the proper message's signature.
 #dynamodb.endpoint = http://dynamodb.us-east-1.amazonaws.com
-dynamodb.endpoint = http://scylla-cc-large-2.dataplatform.dev.smartnews.net:8000
 
 # Strongly recommended to set to uniform.Refer FAQs in README
 #requestdistribution = uniform
