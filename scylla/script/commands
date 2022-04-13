@@ -1,0 +1,38 @@
+cqlsh> create keyspace ycsb
+    WITH REPLICATION = {'class' : 'NetworkTopologyStrategy', 'replication_factor': 3 };
+cqlsh> USE ycsb;
+cqlsh> create table usertable (
+    y_id varchar primary key,
+    field0 varchar,
+    field1 varchar,
+    field2 varchar,
+    field3 varchar,
+    field4 varchar,
+    field5 varchar,
+    field6 varchar,
+    field7 varchar,
+    field8 varchar,
+    field9 varchar,
+    field10 varchar,
+    field11 varchar);
+
+bin/ycsb load scylla -s -P workloads/workloada \
+    -threads 100 -p recordcount=50000000 \
+    -p readproportion=0 -p updateproportion=0 \
+    -p fieldcount=12 -p fieldlength=512 \
+    -p insertstart=0 -p insertcount=50000000 \
+    -p scylla.local_dc="tokyo" \
+    -p scylla.tokenaware=true \
+    -p scylla.hosts="aaa-scylla.dataplatform.dev.smartnews.net" \
+    -p scylla.username=cassandra -p scylla.password=cassandra \
+    -p table="usertable"
+
+$ bin/ycsb run scylla -s -P workloads/workloada \
+    -target 50000 -threads 50 -p recordcount=500000000 \
+    -p fieldcount=12 -p fieldlength=512 \
+    -p operationcount=500000000 \
+    -p scylla.local_dc="ap-ads-delivery" \
+    -p scylla.tokenaware=true \
+    -p scylla.hosts="aaa-scylla.dataplatform.dev.smartnews.net" \
+    -p scylla.username=cassandra -p scylla.password=cassandra \
+    -p table="usertable"
