@@ -27,6 +27,8 @@ bin/ycsb load scylla -s -P workloads/workloada \
     -p scylla.username=cassandra -p scylla.password=cassandra \
     -p table="usertable"
 
+ycsb load scylla -s -P workloads/workloada -threads 100 -p recordcount=50000000 -p readproportion=0 -p updateproportion=0 -p fieldcount=10 -p fieldlength=512 -p insertstart=0 -p insertcount=50000000 -p scylla.local_dc="ap-northeast-1" -p scylla.tokenaware=true -p scylla.hosts="scylla-cc-large-2.dataplatform.dev.smartnews.net" -p scylla.username=cassandra -p scylla.password=cassandra -p table="usertable"
+
 $ bin/ycsb run scylla -s -P workloads/workloada \
     -target 50000 -threads 50 -p recordcount=500000000 \
     -p fieldcount=12 -p fieldlength=512 \
@@ -36,3 +38,5 @@ $ bin/ycsb run scylla -s -P workloads/workloada \
     -p scylla.hosts="aaa-scylla.dataplatform.dev.smartnews.net" \
     -p scylla.username=cassandra -p scylla.password=cassandra \
     -p table="usertable"
+
+ycsb run scylla -s -P workloads/workloada -target 50000 -threads 50 -p recordcount=50000000 -p readproportion=0 -p updateproportion=0 -p fieldcount=10 -p fieldlength=512 -p operationcount=50000000 -p scylla.local_dc="ap-northeast-1" -p scylla.tokenaware=true -p scylla.hosts="scylla-cc-large-2.dataplatform.dev.smartnews.net" -p scylla.username=cassandra -p scylla.password=cassandra -p table="usertable"
