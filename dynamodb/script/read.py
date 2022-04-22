@@ -4,5 +4,5 @@ dynamodb = boto3.resource('dynamodb',  endpoint_url='http://scylla-cc-large-2.da
                   region_name='ap-northeast-1', aws_access_key_id='alternator', aws_secret_access_key='secret_pass')
 
 print(dynamodb.batch_get_item(RequestItems={
-    'usertable_test' : { 'Keys': [{ 'key': 'test123' }] }
+    'usertable' : { 'Keys': [{ 'key': 'test123' }] }
 }))

@@ -4,7 +4,7 @@ dynamodb = boto3.resource('dynamodb',  endpoint_url='http://scylla-cc-large-2.da
                   region_name='ap-northeast-1', aws_access_key_id='alternator', aws_secret_access_key='secret_pass')
 
 dynamodb.batch_write_item(RequestItems={
-    'usertable_test': [
+    'usertable': [
         {
              'PutRequest': {
                  'Item': {
