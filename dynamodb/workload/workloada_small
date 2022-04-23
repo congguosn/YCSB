@@ -34,7 +34,7 @@ scanproportion=0
 insertproportion=0
 
 insertstart=0
-fieldcount=40
+fieldcount=10
 fieldlength=100
 
 readallfields=true
