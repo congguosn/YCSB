@@ -12,7 +12,7 @@ dynamodb.create_table(
     },
     ],
     BillingMode='PAY_PER_REQUEST',
-    TableName='usertable',
+    TableName='usertable_small',
     KeySchema=[
     {
         'AttributeName': 'key',
