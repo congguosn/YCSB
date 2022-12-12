@@ -42,7 +42,7 @@ LICENSE file.
     </dependency>
     <dependency>
       <groupId>com.smartnews.dp.scylladb.alternator</groupId>
-      <artifactId>LoadBalancing</artifactId>
+      <artifactId>LoadBalancing-shaded</artifactId>
       <version>1.4</version>
     </dependency>
     <dependency>
