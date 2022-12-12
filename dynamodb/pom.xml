@@ -41,7 +41,7 @@ LICENSE file.
       <version>1.2.17</version>
     </dependency>
     <dependency>
-      <groupId>com.scylladb.alternator</groupId>
+      <groupId>com.smartnews.dp.scylladb.alternator</groupId>
       <artifactId>LoadBalancing</artifactId>
       <version>1.3</version>
     </dependency>
@@ -52,4 +52,10 @@ LICENSE file.
       <scope>provided</scope>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>smartnews</id>
+      <url>http://nexus.smartnews.be/nexus/content/repositories/smartnews</url>
+    </repository>
+  </repositories>
 </project>
